@@ -26,7 +26,7 @@
                                     <segue destination="bMO-IN-8w3" kind="show" id="ivX-j0-xSj"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iT6-Uc-Cxz">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iT6-Uc-Cxz" customClass="DrawingView" customModule="MultiAppProject" customModuleProvider="target">
                                 <rect key="frame" x="54" y="62" width="267" height="503"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

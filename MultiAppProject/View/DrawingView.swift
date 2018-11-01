@@ -16,16 +16,17 @@ public class DrawingView: UIView {
     public override func draw(_ rect: CGRect) -> Void
     {
         // Drawing code
-        createStickFigure().stroke()
-        
+        createZach().stroke()
+        drawTurtle()
+        createJosh().stroke()
     }
  
-    private func createStickFigure() -> UIBezierPath
+    private func createZach() -> UIBezierPath
     {
         let figure : UIBezierPath = UIBezierPath()
         
-        UIColor.magenta.setStroke()
-        figure.lineWidth = 3.0
+        UIColor.red.setStroke()
+        figure.lineWidth = 7.0
         
         figure.addArc(withCenter: CGPoint(x: 200, y: 200),
                       radius: CGFloat(20),
@@ -45,4 +46,41 @@ public class DrawingView: UIView {
         return figure
     }
 
+    private func drawTurtle() -> Void
+    {
+        let logo = UIBezierPath()
+        UIColor.green.setFill()
+        logo.move(to: CGPoint (x: 50, y: 250))
+        logo.addLine(to: CGPoint(x: 100, y: 300))
+        logo.addLine(to: CGPoint(x: 50, y: 350))
+        logo.close()
+        logo.fill()
+    }
+    
+    private func createJosh() -> UIBezierPath
+    {
+        let figure2 : UIBezierPath = UIBezierPath()
+        
+        UIColor.green.setStroke()
+        figure2.lineWidth = 6.90
+        
+        figure2.addArc(withCenter: CGPoint(x: 150, y: 150),
+                      radius: CGFloat(80),
+                      startAngle: CGFloat(45),
+                      endAngle: CGFloat(90) * CGFloat.pi,
+                      clockwise: true)
+        
+        figure2.move(to: CGPoint(x: 150, y: 230))
+        figure2.addLine(to: CGPoint(x: 150, y: 330))
+        figure2.move(to: CGPoint(x: 120, y: 280))
+        figure2.addLine(to: CGPoint(x: 180, y: 280))
+        figure2.move(to: CGPoint(x: 150, y: 330))
+        figure2.addLine(to: CGPoint(x: 120, y: 390))
+        figure2.move(to: CGPoint(x: 150, y: 330))
+        figure2.addLine(to: CGPoint(x: 180, y: 390))
+        
+        
+        return figure2
+        
+    }
 }
