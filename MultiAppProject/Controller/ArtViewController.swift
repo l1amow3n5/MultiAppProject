@@ -8,10 +8,11 @@
 
 import UIKit
 
-class ArtViewController: UIViewController
+public class ArtViewController: UIViewController
 {
-
-    override func viewDidLoad()
+    @IBOutlet weak var ArtButton: UIButton!
+    
+   public override func viewDidLoad() -> Void
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
