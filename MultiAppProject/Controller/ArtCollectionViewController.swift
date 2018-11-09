@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let reuseIdentifier = "artidentifier"
+private let reuseIdentifier = "artIdentifier"
 
 public class ArtCollectionViewController: UICollectionViewController
 {
@@ -24,7 +24,7 @@ public class ArtCollectionViewController: UICollectionViewController
             UIImage(named: "Elephante"),
             UIImage(named: "JavaHaiku"),
             UIImage(named: "MTM Haiku"),
-            UIImage(named: "OcotCat"),
+            UIImage(named: "OctoCat"),
             UIImage(named: "Pirates"),
             UIImage(named: "ScreenArt"),
             UIImage(named: "SwiftHaiku")
@@ -34,7 +34,7 @@ public class ArtCollectionViewController: UICollectionViewController
     private let labels : [String] =
     {
         return [
-            "BirdMan",
+            "Flying BirdMan",
             "Elephante",
             "JavaHaiku",
             "MTMHaiku",
@@ -52,7 +52,7 @@ public class ArtCollectionViewController: UICollectionViewController
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
     }
@@ -72,23 +72,26 @@ public class ArtCollectionViewController: UICollectionViewController
     public override func numberOfSections(in collectionView: UICollectionView) -> Int
     {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     public override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return creativeCS.count
     }
 
-    public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    public override func collectionView(_ collectionView: UICollectionView, cellForItemAt
+                                        indexPath: IndexPath) -> UICollectionViewCell
     {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let artCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ArtCell
+        
+        artCell.backgroundColor = .cyan
+        artCell.artImage.image = creativeCS [indexPath.row]
+        artCell.artLabel.text = labels[indexPath.row]
     
-        // Configure the cell
-    
-        return cell
+        return artCell
     }
     
     public func collectionView(_ collectionView: UICollectionView,
